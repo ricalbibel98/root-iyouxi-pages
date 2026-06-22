@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>爱游戏 · 知识库入口</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #fafaf8;
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            color: #1e1e1e;
+            line-height: 1.7;
+            padding: 2rem 1.25rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .page {
+            max-width: 740px;
+            width: 100%;
+        }
+
+        /* 标题层级 —— 克制、清晰 */
+        h1 {
+            font-size: 2.2rem;
+            font-weight: 500;
+            letter-spacing: -0.01em;
+            margin-top: 0.4rem;
+            margin-bottom: 1.8rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid #e2e0da;
+            color: #1e1e1e;
+        }
+
+        h2 {
+            font-size: 1.35rem;
+            font-weight: 500;
+            margin-top: 2.8rem;
+            margin-bottom: 0.75rem;
+            color: #2a2a28;
+            letter-spacing: -0.005em;
+        }
+
+        h3 {
+            font-size: 1.05rem;
+            font-weight: 500;
+            margin-top: 1.8rem;
+            margin-bottom: 0.4rem;
+            color: #3b3b38;
+        }
+
+        p, li, .text-block {
+            font-size: 1rem;
+            color: #3a3a38;
+            margin-bottom: 1.1rem;
+        }
+
+        a {
+            color: #28636b;
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.15s;
+        }
+
+        a:hover {
+            border-bottom-color: #28636b;
+        }
+
+        /* 目录感卡片列表 */
+        .directory-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.25rem;
+            margin: 1.8rem 0 0.8rem;
+        }
+
+        .dir-card {
+            background: white;
+            border: 1px solid #eae8e2;
+            border-radius: 12px;
+            padding: 1.25rem 1.1rem 1.1rem;
+            transition: box-shadow 0.2s, border-color 0.2s;
+        }
+
+        .dir-card:hover {
+            border-color: #c6cdc7;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+        }
+
+        .dir-card h4 {
+            font-size: 1rem;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            color: #1f3f3f;
+            letter-spacing: 0.01em;
+        }
+
+        .dir-card p {
+            font-size: 0.9rem;
+            color: #5a5a56;
+            margin-bottom: 0;
+            line-height: 1.6;
+        }
+
+        .dir-card .tag {
+            display: inline-block;
+            margin-top: 0.6rem;
+            padding: 0.2rem 0.7rem;
+            background: #f0efea;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            color: #4a4a46;
+            letter-spacing: 0.01em;
+        }
+
+        /* 提示/说明区块 */
+        .notice-box {
+            background: #f4f3ef;
+            border-left: 3px solid #a3b5a7;
+            padding: 1.2rem 1.5rem;
+            border-radius: 0 8px 8px 0;
+            margin: 2.2rem 0 1.2rem;
+        }
+
+        .notice-box p {
+            margin-bottom: 0.2rem;
+            font-size: 0.95rem;
+        }
+
+        .related-box {
+            background: white;
+            border: 1px solid #e2dfd9;
+            border-radius: 12px;
+            padding: 1.25rem 1.5rem;
+            margin: 2.5rem 0 1.2rem;
+        }
+
+        .related-box ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .related-box li {
+            padding: 0.35rem 0;
+            border-bottom: 1px dashed #edeae4;
+            font-size: 0.95rem;
+        }
+
+        .related-box li:last-child {
+            border-bottom: none;
+        }
+
+        .related-box .rel-label {
+            display: inline-block;
+            min-width: 5.2rem;
+            color: #5c6b63;
+            font-weight: 450;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid #e6e3dc;
+            margin: 2.8rem 0 1.5rem;
+        }
+
+        .footer-note {
+            font-size: 0.85rem;
+            color: #7d7b74;
+            text-align: center;
+            margin-top: 2.8rem;
+            border-top: 1px solid #edebe5;
+            padding-top: 1.5rem;
+        }
+
+        /* 响应式 */
+        @media (max-width: 560px) {
+            body {
+                padding: 1.5rem 1rem;
+            }
+            h1 {
+                font-size: 1.8rem;
+            }
+            .directory-grid {
+                grid-template-columns: 1fr;
+            }
+            .dir-card {
+                padding: 1rem;
+            }
+            .notice-box {
+                padding: 1rem 1.2rem;
+            }
+            .related-box {
+                padding: 1rem 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+
+    <h1>爱游戏 · 知识库入口</h1>
+
+    <!-- 稳定入口说明段落 / hero 区 -->
+    <p>
+        对许多长期关注游戏领域的人来说，一个清晰、稳定的信息入口比零散的资讯流更值得依赖。<a href="https://root-iyouxi.com">爱游戏</a> 
+        始终保持着简洁的内容结构，不堆砌弹窗，也不追逐短时效的热点搬运。作为持续维护的知识库式站点，它更侧重于将游戏相关的概念、机制、历史脉络整理成可追溯的条目，方便查阅者按图索骥。
+    </p>
+
+    <p>
+        这种偏重「整理」而非「刷新」的定位，让站点逐渐积累了一批对游戏文化有深入需求的读者。无论是想理解某个经典系列的设计演变，还是查找特定类型的作品参考，这里提供的都是经过筛选与归类的信息，而非即时性的新闻速递。
+    </p>
+
+    <!-- 目录感布局：四个知识分区卡片 -->
+    <div class="directory-grid">
+        <div class="dir-card">
+            <h4>📂 游戏类型索引</h4>
+            <p>按玩法、题材、年代划分的主要条目，适合从宏观了解品类全貌。</p>
+            <span class="tag">RPG · 策略 · 模拟 · 平台</span>
+        </div>
+        <div class="dir-card">
+            <h4>📂 平台与硬件</h4>
+            <p>主机、掌机、PC 及周边设备的发展路线，兼收录历代技术参数。</p>
+            <span class="tag">任天堂 · PlayStation · 街机</span>
+        </div>
+        <div class="dir-card">
+            <h4>📂 设计词汇表</h4>
+            <p>关卡设计、系统交互、叙事手法等术语解释，附带简例说明。</p>
+            <span class="tag">涌现 · 心流 · 循环设计</span>
+        </div>
+        <div class="dir-card">
+            <h4>📂 文化·事件</h4>
+            <p>行业重要节点、展会、开发者访谈及社区现象记录。</p>
+            <span class="tag">历史时刻 · 争议 · 同人</span>
+        </div>
+    </div>
+
+    <!-- 说明区：稳定入口的由来 -->
+    <h2>为什么强调「入口」而非「首页」</h2>
+    <p>
+        大多数站点会设计一个充满动态横幅和最新文章的首页，而<a href="https://root-iyouxi.com">爱游戏</a>的起始页更像一份目录索引。
+        它不希望用户每次打开都面对陌生的信息流，而是提供一个可以反复回溯的框架：左侧或顶部是固定的分类引导，核心区域陈列的是知识结构的入口，而非按时间排序的碎片。
+        这种克制在信息过载的当下显得愈发珍贵。
+    </p>
+    <p>
+        从实际使用角度看，一位需要系统了解「银河城」类型演变的读者，可以直接在相关分类下找到按作品年份排列的条目，而不是在几十篇新闻里翻找。入口的功能就是降低每一次查找的认知负担。
+    </p>
+
+    <!-- 提示区：使用建议 -->
+    <div class="notice-box">
+        <p><strong>💡 使用提示</strong></p>
+        <p>如果你刚刚接触这个知识库，建议先从「游戏类型索引」或「设计词汇表」入手。每个分类下的条目都带有简短的摘要和关联链接，方便横向对比。遇到不熟悉的术语时，词汇表通常能提供清晰的上下文解释。目录中的标签仅表示常见子类别，实际条目会更丰富。</p>
+    </div>
+
+    <!-- 相关信息区：FAQ 摘要 + 关联条目 -->
+    <h2>相关信息</h2>
+
+    <div class="related-box">
+        <ul>
+            <li><span class="rel-label">常见问题</span> 站内条目会定期更新吗？—— 维护节奏偏慢，但每次更新都会修正过时内容并补充引源。</li>
+            <li><span class="rel-label">推荐起点</span> 「平台游戏三十年」与「JRPG 系统演化」是阅读量较高的两篇综述式条目。</li>
+            <li><span class="rel-label">外部参考</span> 部分条目末尾附有原始访谈或学术论文链接，可作延伸阅读。</li>
+            <li><span class="rel-label">条目结构</span> 每个条目通常包含背景、核心机制、代表作品及影响，末尾有「参见」部分。</li>
+        </ul>
+    </div>
+
+    <!-- 额外段落：承接语气，自然收束 -->
+    <p>
+        知识库的形成往往需要时间沉淀，而一个稳定的入口意味着你不会在查找时迷失在冗余的导航里。
+        <a href="https://root-iyouxi.com">爱游戏</a> 所呈现的并非游戏资讯的瀑布，而是一张被持续擦拭的索引桌。
+        上面铺开的条目彼此关联，等待被需要的人取阅。这种姿态更适合那些打算安静探索、而非被标题推着走的阅读者。
+    </p>
+
+    <hr>
+
+    <div class="footer-note">
+        — 入口即结构，结构即路径 —
+    </div>
+
+</div>
+</body>
+</html>
